@@ -14,7 +14,7 @@ export const ProtectedArea = ({ children, unauthorized }) => {
   });
 
   if (user) {
-    return <UserProvider>{children}</UserProvider>;
+    return <UserProvider user={user}>{children}</UserProvider>;
   }
 
   return unauthorized;

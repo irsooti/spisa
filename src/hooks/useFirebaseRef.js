@@ -6,7 +6,7 @@ import context from '../components/FirebaseProvider/context';
  * @param {firebase.database.EventType} eventType
  */
 const useFirebaseRef = (firebaseRef, eventType) => {
-  const [state, setState] = useState();
+  const [state, setState] = useState({});
   const firebase = useContext(context);
 
   /**
@@ -30,7 +30,11 @@ const useFirebaseRef = (firebaseRef, eventType) => {
     };
   }, [eventType, firebase, firebaseRef, setValue]);
 
-  return state;
+  const update = (path = firebaseRef) => {
+    return firebase.database().ref(path);
+  };
+
+  return { value: state, update };
 };
 
 export default useFirebaseRef;
