@@ -1,9 +1,0 @@
-{
-  "apiKey": "AIzaSyAyFVoLZbR3gQ8hW1lFGN37ZUfPax9p84E",
-  "authDomain": "personal-timesheet.firebaseapp.com",
-  "databaseURL": "https://personal-timesheet.firebaseio.com",
-  "projectId": "personal-timesheet",
-  "storageBucket": "personal-timesheet.appspot.com",
-  "messagingSenderId": "562519536481",
-  "appId": "1:562519536481:web:dadc075f319efe9cbf4b20"
-}
