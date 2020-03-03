@@ -11,6 +11,7 @@ const ShoppingListItems = ({ items }) => {
           id={key}
           description={items[key].description}
           quantity={items[key].quantity}
+          notes={items[key].notes}
         />
       ))}
     </div>

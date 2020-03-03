@@ -3,14 +3,14 @@ import FirebaseProvider from '../FirebaseProvider';
 import { Layout } from '../Layout';
 import { ProtectedArea } from '../ProtectedArea';
 import { Login } from '../Login';
-import { ShoppingList } from '../ShoppingList';
+import ShoppingArea from '../ShoppingArea';
 
 const App = () => {
   return (
     <FirebaseProvider>
       <Layout>
         <ProtectedArea unauthorized={<Login />}>
-          <ShoppingList />
+          <ShoppingArea />
         </ProtectedArea>
       </Layout>
     </FirebaseProvider>
