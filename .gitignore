@@ -19,7 +19,7 @@
 .env.production.local
 
 # configuration files
-*.firebase.config.json
+production.firebase.config.json
 
 npm-debug.log*
 yarn-debug.log*
