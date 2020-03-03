@@ -14,7 +14,7 @@ const ShoppingArea = () => {
 
   const onNoteSubmit = useCallback(
     ({ description, notes, quantity }) => {
-      update().push({ description, notes, quantity });
+      update().push({ description, notes, quantity, priority: 0 });
     },
     [update],
   );
