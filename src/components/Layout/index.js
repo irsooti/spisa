@@ -9,18 +9,17 @@ const { Provider } = layoutContext;
 
 export const Layout = ({ children }) => {
   const [currentTheme, setTheme] = useState(
-    window.localStorage.getItem('theme') || theme.light,
+    window.localStorage.getItem('theme') || Object.keys(theme)[0],
   );
 
   const setCurrentTheme = selectedTheme => {
     setTheme(selectedTheme);
-    // eslint-disable-next-line no-undef
     window.localStorage.setItem('theme', selectedTheme);
   };
 
   return (
     <Provider value={{ setTheme: setCurrentTheme }}>
-      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme[currentTheme]}>{children}</ThemeProvider>
     </Provider>
   );
 };
