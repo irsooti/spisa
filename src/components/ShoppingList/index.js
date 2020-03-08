@@ -1,19 +1,20 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import ShoppingListItems from '../ShoppingListItems';
-// import PropTypes from 'prop-types';
 import shoppingListItemsPropType from '../../propTypes/shoppingListItemsPropType';
+import ShoppingListItems from '../ShoppingListItems';
 import { ListItems } from './styles';
 
-const ShoppingList = ({ shoppingListItems }) => {
+const ShoppingList = ({ shoppingListItems, update }) => {
   return (
     <ListItems>
-      <ShoppingListItems items={shoppingListItems} />
+      <ShoppingListItems update={update} items={shoppingListItems} />
     </ListItems>
   );
 };
 
 ShoppingList.propTypes = {
   shoppingListItems: shoppingListItemsPropType,
+  update: PropTypes.func,
 };
 
 export default ShoppingList;

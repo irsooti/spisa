@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import shoppingListItemsPropType from '../../propTypes/shoppingListItemsPropType';
 import ShoppingListItem from '../ShoppingListItem';
 
-const ShoppingListItems = ({ items }) => {
+const ShoppingListItems = ({ items, update }) => {
   return (
     <div>
       {Object.keys(items).map(key => (
@@ -13,6 +14,8 @@ const ShoppingListItems = ({ items }) => {
           quantity={items[key].quantity}
           notes={items[key].notes}
           priority={items[key].priority}
+          update={update}
+          isAdded={items[key].isAdded}
         />
       ))}
     </div>
@@ -21,6 +24,7 @@ const ShoppingListItems = ({ items }) => {
 
 ShoppingListItems.propTypes = {
   items: shoppingListItemsPropType,
+  update: PropTypes.func,
 };
 
 export default ShoppingListItems;

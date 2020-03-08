@@ -30,8 +30,8 @@ const useFirebaseRef = (firebaseRef, eventType) => {
     };
   }, [eventType, firebase, firebaseRef, setValue]);
 
-  const update = (path = firebaseRef) => {
-    return firebase.database().ref(path);
+  const update = (path = '') => {
+    return firebase.database().ref(firebaseRef + path);
   };
 
   return { value: state, update };

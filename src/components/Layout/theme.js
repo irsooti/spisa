@@ -9,6 +9,10 @@ const generics = {
   inputPrimaryBg: 'linear-gradient(90deg,#2196F3,#00BCD4)',
   inputColor: '#FFF',
   inputError: '#e7c0c0',
+  small: '0.8rem',
+  red: '#f75858',
+  yellow: '#fed32b',
+  info: '#fed32b',
 };
 
 const dark = {
