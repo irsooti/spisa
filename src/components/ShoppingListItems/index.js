@@ -12,6 +12,7 @@ const ShoppingListItems = ({ items }) => {
           description={items[key].description}
           quantity={items[key].quantity}
           notes={items[key].notes}
+          priority={items[key].priority}
         />
       ))}
     </div>

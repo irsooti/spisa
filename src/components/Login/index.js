@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import googleAuthProvider from '../../utils/googleAuthProvider';
 import firebaseContext from '../FirebaseProvider/context';
+import { LoginContainer, LoginText, LoginButtonBox, LoginBox } from './styles';
+import Button from '../Button';
 
 export const Login = () => {
   const firebase = useContext(firebaseContext);
@@ -28,10 +30,20 @@ export const Login = () => {
   }
 
   return (
-    <div>
-      <button type="button" onClick={login}>
-        Login
-      </button>
-    </div>
+    <LoginContainer>
+      <LoginBox>
+        <LoginText>
+          Ciao, l'autenticazione avviene mediante il provider di Google al
+          momento.
+          <br />
+          <br /> Clicca Login per autenticarti
+        </LoginText>
+        <LoginButtonBox>
+          <Button type="button" onClick={login}>
+            Login
+          </Button>
+        </LoginButtonBox>
+      </LoginBox>
+    </LoginContainer>
   );
 };
