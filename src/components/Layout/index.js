@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import childrenPropType from '../../propTypes/childrenPropType';
 import theme from './theme';
 import layoutContext from './context';
+import './style.css';
+import { LayoutContainer } from './styles';
 
 const { Provider } = layoutContext;
 
@@ -20,7 +22,9 @@ export const Layout = ({ children }) => {
 
   return (
     <Provider value={{ setTheme: setCurrentTheme }}>
-      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
+      <ThemeProvider theme={currentTheme}>
+        <LayoutContainer>{children}</LayoutContainer>
+      </ThemeProvider>
     </Provider>
   );
 };

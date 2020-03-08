@@ -1,10 +1,18 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useFirebaseRef } from '../../hooks';
-import ShoppingInput from '../ShoppingInput';
 import ShoppingList from '../ShoppingList';
+import ShoppingModal from '../ShoppingModal';
+import ShoppingNavigationBar from '../ShoppingNavigationBar';
 import { SHOPPING_NODE } from './constants';
+import { ShoppingAreaWrapper } from './styles';
 
 const ShoppingArea = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(prevState => !prevState);
+  };
+
   const { value: shoppingListItems, update } = useFirebaseRef(
     SHOPPING_NODE,
     'value',
@@ -14,16 +22,27 @@ const ShoppingArea = () => {
 
   const onNoteSubmit = useCallback(
     ({ description, notes, quantity }) => {
-      update().push({ description, notes, quantity, priority: 0 });
+      update()
+        .push({ description, notes, quantity, priority: 0 })
+        .then(() => {
+          toggleModal();
+        });
     },
     [update],
   );
 
   return (
-    <div>
-      <ShoppingList shoppingListItems={shoppingListItems || {}} />
-      <ShoppingInput onSubmit={onNoteSubmit} />
-    </div>
+    <>
+      <ShoppingAreaWrapper>
+        <ShoppingList shoppingListItems={shoppingListItems || {}} />
+        <ShoppingNavigationBar openShoppingModal={toggleModal} />
+      </ShoppingAreaWrapper>
+      <ShoppingModal
+        closeModal={toggleModal}
+        isOpen={isModalOpen}
+        onSubmit={onNoteSubmit}
+      />
+    </>
   );
 };
 

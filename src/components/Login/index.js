@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import googleAuthProvider from '../../utils/googleAuthProvider';
 import firebaseContext from '../FirebaseProvider/context';
+import { LoginContainer, LoginText, LoginButtonBox, LoginBox } from './styles';
 
 export const Login = () => {
   const firebase = useContext(firebaseContext);
@@ -28,10 +29,18 @@ export const Login = () => {
   }
 
   return (
-    <div>
-      <button type="button" onClick={login}>
-        Login
-      </button>
-    </div>
+    <LoginContainer>
+      <LoginBox>
+        <LoginText>
+          Aliquip veniam do deserunt non consectetur magna excepteur in labore
+          magna nostrud laborum veniam.
+        </LoginText>
+        <LoginButtonBox>
+          <button type="button" onClick={login}>
+            Login
+          </button>
+        </LoginButtonBox>
+      </LoginBox>
+    </LoginContainer>
   );
 };
