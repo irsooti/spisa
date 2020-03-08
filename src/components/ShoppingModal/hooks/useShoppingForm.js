@@ -12,7 +12,7 @@ export const useShoppingForm = () => {
       quantity: yup
         .number()
         .min(1)
-        .max(100)
+        .max(99)
         .required(),
       description: yup.string().required(),
       notes: yup.string(),

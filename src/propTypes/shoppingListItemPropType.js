@@ -5,5 +5,6 @@ export default {
   quantity: PropTypes.number,
   id: PropTypes.string,
   priority: PropTypes.number,
-  notes: PropTypes.string
+  notes: PropTypes.string,
+  isAdded: PropTypes.bool,
 };

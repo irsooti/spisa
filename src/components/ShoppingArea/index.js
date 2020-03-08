@@ -34,7 +34,10 @@ const ShoppingArea = () => {
   return (
     <>
       <ShoppingAreaWrapper>
-        <ShoppingList shoppingListItems={shoppingListItems || {}} />
+        <ShoppingList
+          update={update}
+          shoppingListItems={shoppingListItems || {}}
+        />
         <ShoppingNavigationBar openShoppingModal={toggleModal} />
       </ShoppingAreaWrapper>
       <ShoppingModal

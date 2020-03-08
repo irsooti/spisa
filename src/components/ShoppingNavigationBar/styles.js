@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const NavigationBar = styled.div`
   position: fixed;
+  z-index: 1;
   bottom: 0;
   width: 100%;
   left: 0;
