@@ -11,7 +11,7 @@ const { Provider } = layoutContext;
 
 export const Layout = ({ children }) => {
   const [currentTheme, setTheme] = useState(
-    window.localStorage.getItem('theme') || Object.keys(theme)[0],
+    window.localStorage.getItem('theme') || Object.keys(theme)[1],
   );
 
   const setCurrentTheme = selectedTheme => {

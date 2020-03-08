@@ -34,6 +34,11 @@ export const QuantityItem = styled.div`
 export const NoteItem = styled.div`
   margin-top: 5px;
   border-radius: ${props => props.theme.containerRadius};
-  background: linear-gradient(0deg, rgba(255,230,134,1) 0%, rgba(254,211,43,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 230, 134, 1) 0%,
+    rgba(254, 211, 43, 1) 100%
+  );
   padding: 15px 10px;
+  border-top: solid 11px hsla(38, 299%, 58%, 1);
 `;
