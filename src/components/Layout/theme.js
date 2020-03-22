@@ -13,6 +13,7 @@ const generics = {
   red: '#f75858',
   yellow: '#fed32b',
   info: '#fed32b',
+  grey: 'grey',
 };
 
 const dark = {

@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
 import googleAuthProvider from '../../utils/googleAuthProvider';
 import firebaseContext from '../FirebaseProvider/context';
 import { LoginContainer, LoginText, LoginButtonBox, LoginBox } from './styles';
@@ -33,13 +35,10 @@ export const Login = () => {
     <LoginContainer>
       <LoginBox>
         <LoginText>
-          Ciao, l'autenticazione avviene mediante il provider di Google al
-          momento.
-          <br />
-          <br /> Clicca Login per autenticarti
+          <FormattedMessage {...messages.authentication} />
         </LoginText>
         <LoginButtonBox>
-          <Button type="button" onClick={login}>
+          <Button block type="button" onClick={login}>
             Login
           </Button>
         </LoginButtonBox>

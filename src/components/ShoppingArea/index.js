@@ -13,7 +13,7 @@ const ShoppingArea = () => {
     setIsModalOpen(prevState => !prevState);
   };
 
-  const { value: shoppingListItems, update } = useFirebaseRef(
+  const { initialized, value: shoppingListItems, update } = useFirebaseRef(
     SHOPPING_NODE,
     'value',
   );
@@ -30,6 +30,10 @@ const ShoppingArea = () => {
     },
     [update],
   );
+
+  if (!initialized) {
+    return ''
+  }
 
   return (
     <>

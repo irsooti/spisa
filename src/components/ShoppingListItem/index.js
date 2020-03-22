@@ -33,7 +33,8 @@ const ShoppingListItem = ({
         {/* <div className="item-header-col">
           <Badge type="warning">Ca</Badge>
         </div> */}
-        <div className="item-header-col">
+        <div className="item-header-col item-header-col-left"> </div>
+        <div className="item-header-col item-header-col-right">
           <ShoppingListItemCart toggleCart={handleUpdate} isInCart={isAdded} />
         </div>
       </div>

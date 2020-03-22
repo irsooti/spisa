@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledButton = styled.button`
   border-radius: ${props => props.theme.inputRadius};
@@ -8,6 +8,9 @@ export const StyledButton = styled.button`
   box-shadow: ${props => props.theme.boxShadow};
   color: ${props => props.theme.inputColor};
   background: ${props => props.theme.inputPrimaryBg};
+  ${({block}) => block && css`
+    width: 100%;
+  `}
   &:focus {
     outline: none;
   }

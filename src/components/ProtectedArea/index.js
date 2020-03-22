@@ -6,12 +6,18 @@ import childrenPropType from '../../propTypes/childrenPropType';
 export const ProtectedArea = ({ children, unauthorized }) => {
   const context = useContext(firebaseContext);
   const [user, setUser] = useState();
+  const [initialized, setInitialized] = useState(false)
 
   useEffect(() => {
     context.auth().onAuthStateChanged(u => {
+      setInitialized(true)
       setUser(u);
     });
-  });
+  }, [context]);
+
+  if (!initialized) {
+    return ''
+  }
 
   if (user) {
     return <UserProvider user={user}>{children}</UserProvider>;

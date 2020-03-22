@@ -1,0 +1,13 @@
+{
+  "login.login": "Login",
+  "login.authentication": "Per favore, autenticati utilizzando Google",
+  "ShoppingListComplete.resetButton": "Resetta la lista della spesa",
+  "ShoppingListComplete.description": "Spesa fu fatta, finalmente!",
+  "ShoppingListFilterOrganize.toBuy": "Da comprare",
+  "ShoppingListFilterOrganize.inTheCart": "Nel carrello",
+  "ShoppingModal.quantity": "Quantità",
+  "ShoppingModal.description": "Cosa comprare",
+  "ShoppingModal.notes": "Note",
+  "ShoppingModal.add": "Aggiungi elemento alla lista",
+  "ShoppingEmptyList.emptyText": "Non hai ancora comprato nulla"
+}
