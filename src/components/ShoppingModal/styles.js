@@ -57,7 +57,7 @@ export const ShoppingModalBox = styled.div`
   position: relative;
   top: -100px;
   display: block;
-  animation: ${modalBoxAnimation} 1s cubic-bezier(0.075, 0.82, 0.165, 1)
+  animation: ${modalBoxAnimation} 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
     forwards;
   background-color: ${props => props.theme.background};
   margin: 10px 15px;

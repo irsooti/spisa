@@ -3,6 +3,7 @@
 
 body {
   margin: 0;
+  font-size: 14px;
   overscroll-behavior-y: none;
   font-family: 'Nunito', sans-serif;
 }

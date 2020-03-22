@@ -2,22 +2,25 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import shoppingListItemsPropType from '../../propTypes/shoppingListItemsPropType';
 import ShoppingListItem from '../ShoppingListItem';
+import ShoppingListFilterOrganize from '../ShoppingListFilterOrganize';
 
 const ShoppingListItems = ({ items, update }) => {
   return (
     <div>
-      {Object.keys(items).map(key => (
-        <ShoppingListItem
-          key={key}
-          id={key}
-          description={items[key].description}
-          quantity={items[key].quantity}
-          notes={items[key].notes}
-          priority={items[key].priority}
-          update={update}
-          isAdded={items[key].isAdded}
-        />
-      ))}
+      <ShoppingListFilterOrganize update={update}>
+        {Object.keys(items).map(key => (
+          <ShoppingListItem
+            key={key}
+            id={key}
+            description={items[key].description}
+            quantity={items[key].quantity}
+            notes={items[key].notes}
+            priority={items[key].priority}
+            update={update}
+            isAdded={items[key].isAdded}
+          />
+        ))}
+      </ShoppingListFilterOrganize>
     </div>
   );
 };

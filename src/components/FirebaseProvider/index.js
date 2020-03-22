@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -11,17 +11,24 @@ import firebaseConfig from '../../config/firebaseConfig';
 const { Provider } = context;
 
 const FirebaseProvider = ({ children }) => {
-  let firebaseInstance;
-  if (firebase.apps.length === 0) {
-    firebaseInstance = firebase.initializeApp(
-      firebaseConfig,
-      firebaseConfig.projectId,
-    );
+  const [firebaseInstance, setFirebaseInstance] = useState();
+
+  useEffect(() => {
+    if (firebase.apps.length === 0) {
+      setFirebaseInstance(
+        firebase.initializeApp(firebaseConfig, firebaseConfig.projectId),
+      );
+    }
+  }, []);
+  // useEffect(() => {
+  //   console.info(`Name: ${firebaseInstance.name}`);
+  // }, [firebaseInstance]);
+
+  if (firebaseInstance && firebaseInstance.name && firebase.apps.length === 1) {
+    return <Provider value={firebaseInstance}>{children}</Provider>;
   }
 
-  useEffect(() => console.info(`Name: ${firebaseInstance.name}`));
-
-  return <Provider value={firebaseInstance}>{children}</Provider>;
+  return '';
 };
 
 FirebaseProvider.propTypes = {

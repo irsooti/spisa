@@ -1,11 +1,13 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import React from 'react';
 import Button from '../Button';
 import Input from '../Input';
 import { useShoppingForm } from './hooks/useShoppingForm';
 import { ShoppingModalBox, ShoppingModalWrapper } from './styles';
+import messages from './messages';
 
 const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
   const { handleSubmit, register, errors } = useShoppingForm();
@@ -24,7 +26,7 @@ const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
               isError={!!errors.description}
               size={{ width: '80%' }}
               name="description"
-              label="What to buy"
+              label={<FormattedMessage {...messages.description} />}
               ref={register}
             />
             <Input
@@ -32,7 +34,7 @@ const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
               name="quantity"
               size={{ width: '20%' }}
               type="number"
-              label="Quantity"
+              label={<FormattedMessage {...messages.quantity} />}
               ref={register}
             />
           </div>
@@ -42,12 +44,14 @@ const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
               ref={register}
               name="notes"
               type="textarea"
-              label="Notes"
-              placeholder="Prendi la marca x, y, z..."
+              label={<FormattedMessage {...messages.notes} />}
+              placeholder="bla bla bla..."
             />
           </div>
           <div className="modal-footer">
-            <Button type="submit">Add item to the list</Button>
+            <Button block type="submit">
+              <FormattedMessage {...messages.add} />
+            </Button>
           </div>
         </form>
       </ShoppingModalBox>

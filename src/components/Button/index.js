@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { StyledButton } from './styles';
 import childrenPropType from '../../propTypes/childrenPropType';
 
@@ -10,6 +10,7 @@ const Button = ({ children, ...props }) => {
 
 Button.propTypes = {
   children: childrenPropType,
+  block: PropTypes.bool
 };
 
 export default Button;

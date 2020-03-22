@@ -7,12 +7,14 @@ import context from '../components/FirebaseProvider/context';
  */
 const useFirebaseRef = (firebaseRef, eventType) => {
   const [state, setState] = useState({});
+  const [initialized, setInitialized] = useState(false);
   const firebase = useContext(context);
 
   /**
    * @param {firebase.database.DataSnapshot} evt
    */
   const setValue = useCallback(evt => {
+    setInitialized(true)
     setState(evt.val());
   }, []);
 
@@ -34,7 +36,7 @@ const useFirebaseRef = (firebaseRef, eventType) => {
     return firebase.database().ref(firebaseRef + path);
   };
 
-  return { value: state, update };
+  return { initialized, value: state, update };
 };
 
 export default useFirebaseRef;

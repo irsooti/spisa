@@ -1,6 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fadeInTransition = keyframes`
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: #3a3a3ac4;
+  }
+`;
 
 export const ListItem = styled.div`
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: ${props => props.theme.containerRadius};
   box-shadow: ${props => props.theme.boxShadow};
   padding: 10px 15px;
@@ -14,7 +25,11 @@ export const ListItem = styled.div`
     align-content: center;
     align-items: center;
     .item-header-col {
-      width: 100%;
+      width: 50%;
+    }
+
+    .item-header-col-right {
+      text-align: right;
     }
   }
   .item-title-row {
@@ -54,7 +69,7 @@ export const InTheCartOverlay = styled.div`
       height: 100%;
       left: 0;
       top: 0;
-      background-color: #3a3a3ac4;
+      animation: ${fadeInTransition} 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
       overflow: hidden;
       display: flex;
       & > div {
@@ -78,3 +93,5 @@ export const NoteItem = styled.div`
   padding: 15px 10px;
   border-top: solid 11px hsla(38, 299%, 58%, 1);
 `;
+
+
