@@ -6,12 +6,18 @@ import childrenPropType from '../../propTypes/childrenPropType';
 import ShoppingEmptyList from '../ShoppingEmptyList';
 import ShoppingListComplete from '../ShoppingListComplete';
 import messages from './messages';
+import ShoppingListDefault from '../ShoppingListDefault';
 
 const ShoppingListFilterOrganize = ({ children, update }) => {
   const [notInTheCartItems, inTheCartItems] = partition(
     item => item.props.isAdded,
     children,
   );
+
+  if (notInTheCartItems.length === 0 && inTheCartItems.length === 0) {
+    return <ShoppingListDefault />;
+  }
+
   return (
     <>
       <div>
