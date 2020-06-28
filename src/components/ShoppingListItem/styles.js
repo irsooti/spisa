@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components';
-import { animated } from 'react-spring';
 
 const fadeInTransition = keyframes`
   from {
@@ -11,7 +10,7 @@ const fadeInTransition = keyframes`
   }
 `;
 
-export const ListItem = styled(animated.div)`
+export const ListItem = styled.div`
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: ${(props) => props.theme.containerRadius};
   box-shadow: ${(props) => props.theme.boxShadow};
