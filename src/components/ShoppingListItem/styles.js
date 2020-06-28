@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import { animated } from 'react-spring';
 
 const fadeInTransition = keyframes`
   from {
@@ -10,10 +11,10 @@ const fadeInTransition = keyframes`
   }
 `;
 
-export const ListItem = styled.div`
+export const ListItem = styled(animated.div)`
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-radius: ${props => props.theme.containerRadius};
-  box-shadow: ${props => props.theme.boxShadow};
+  border-radius: ${(props) => props.theme.containerRadius};
+  box-shadow: ${(props) => props.theme.boxShadow};
   padding: 10px 15px;
   position: relative;
   margin-bottom: 15px;
@@ -45,21 +46,26 @@ export const ListItem = styled.div`
 `;
 
 export const QuantityItem = styled.div`
-  background: ${props => props.theme.greenBlueGradient};
+  /* background: ${(props) => props.theme.greenBlueGradient}; */
   height: 35px;
-  font-size: 0.8rem;
-  width: 35px;
-  border-radius: 50%;
+  padding: 5px 5px;
+  font-size: 1.3rem;
+  border-radius: ${(props) => props.theme.containerRadius};
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  color: #fff;
   flex-shrink: 0;
+  font-weight: bolder;
+  .unit {
+    font-size: 1rem;
+    color: #828282;
+    margin-left: 5px;
+  }
 `;
 
 export const InTheCartOverlay = styled.div`
-  ${props =>
+  ${(props) =>
     props.isAdded &&
     css`
       position: absolute;
@@ -69,7 +75,8 @@ export const InTheCartOverlay = styled.div`
       height: 100%;
       left: 0;
       top: 0;
-      animation: ${fadeInTransition} 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation: ${fadeInTransition} 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)
+        forwards;
       overflow: hidden;
       display: flex;
       & > div {
@@ -84,7 +91,7 @@ export const InTheCartOverlay = styled.div`
 
 export const NoteItem = styled.div`
   margin-top: 5px;
-  border-radius: ${props => props.theme.containerRadius};
+  border-radius: ${(props) => props.theme.containerRadius};
   background: linear-gradient(
     0deg,
     rgba(255, 230, 134, 1) 0%,
@@ -93,5 +100,3 @@ export const NoteItem = styled.div`
   padding: 15px 10px;
   border-top: solid 11px hsla(38, 299%, 58%, 1);
 `;
-
-

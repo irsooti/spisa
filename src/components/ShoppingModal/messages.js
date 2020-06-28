@@ -17,4 +17,8 @@ export default defineMessages({
     id: 'ShoppingModal.add',
     defaultMessage: 'Add item to the list',
   },
+  unit: {
+    id: 'ShoppingModal.unit',
+    defaultMessage: 'Unit of measurement',
+  },
 });

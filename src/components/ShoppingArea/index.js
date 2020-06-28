@@ -10,7 +10,7 @@ const ShoppingArea = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
-    setIsModalOpen(prevState => !prevState);
+    setIsModalOpen((prevState) => !prevState);
   };
 
   const { initialized, value: shoppingListItems, update } = useFirebaseRef(
@@ -21,9 +21,15 @@ const ShoppingArea = () => {
   useEffect(() => {}, [shoppingListItems]);
 
   const onNoteSubmit = useCallback(
-    ({ description, notes, quantity }) => {
+    ({ description, notes, quantity, unit }) => {
       update()
-        .push({ description, notes, quantity, priority: 0 })
+        .push({
+          description,
+          notes,
+          quantity,
+          priority: 0,
+          unit: unit.toLowerCase(),
+        })
         .then(() => {
           toggleModal();
         });
@@ -32,7 +38,7 @@ const ShoppingArea = () => {
   );
 
   if (!initialized) {
-    return ''
+    return '';
   }
 
   return (

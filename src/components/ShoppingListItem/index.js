@@ -12,6 +12,7 @@ const ShoppingListItem = ({
   notes,
   update,
   priority,
+  unit,
 }) => {
   const handleUpdate = () => {
     update(`/${id}`).update({
@@ -21,6 +22,7 @@ const ShoppingListItem = ({
       quantity,
       notes,
       priority,
+      unit,
     });
   };
 
@@ -39,7 +41,10 @@ const ShoppingListItem = ({
         </div>
       </div>
       <div className="item-title-row">
-        <QuantityItem>{quantity}</QuantityItem>
+        <QuantityItem>
+          {quantity}
+          <span className="unit">{unit}</span>
+        </QuantityItem>
         <h3>{description}</h3>
       </div>
       {notes && (

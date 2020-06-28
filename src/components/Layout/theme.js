@@ -2,7 +2,7 @@ const generics = {
   containerRadius: '13px',
   boxShadow: '0px 0px 30px #00000029',
   green: '#00cf92',
-  blue: '#009cde',
+  blue: '#007bff',
   greenBlueGradient: `linear-gradient(0deg,#00cf92,#009cde)`,
   inputRadius: '7px',
   inputPadding: '20px 26px',
