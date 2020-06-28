@@ -8,9 +8,9 @@ const ShoppingListItemCart = ({ toggleCart, isInCart }) => {
   return (
     <CartButton onClick={toggleCart} isInCart={isInCart}>
       {isInCart ? (
-        <FontAwesomeIcon size="2x" icon={faCheck} />
+        <FontAwesomeIcon icon={faCheck} />
       ) : (
-        <FontAwesomeIcon size="2x" icon={faCartArrowDown} />
+        <FontAwesomeIcon icon={faCartArrowDown} />
       )}
     </CartButton>
   );

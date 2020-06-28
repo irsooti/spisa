@@ -1,40 +1,44 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Button from '../Button';
 import Input from '../Input';
+import Modal from '../Modal';
 import { useShoppingForm } from './hooks/useShoppingForm';
-import { ShoppingModalBox, ShoppingModalWrapper } from './styles';
 import messages from './messages';
 
 const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
   const { handleSubmit, register, errors } = useShoppingForm();
 
-  if (!isOpen) return null;
-
   return (
-    <ShoppingModalWrapper>
-      <ShoppingModalBox>
-        <div className="modal-header">
-          <FontAwesomeIcon onClick={closeModal} role="button" icon={faTimes} />
-        </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <Modal isOpen={isOpen} onClose={closeModal}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Modal.Body>
           <div className="modal-row">
-            <Input
-              isError={!!errors.description}
-              size={{ width: '80%' }}
-              name="description"
-              label={<FormattedMessage {...messages.description} />}
-              ref={register}
-            />
             <Input
               isError={!!errors.quantity}
               name="quantity"
-              size={{ width: '20%' }}
+              size={{ width: '50%' }}
               type="number"
               label={<FormattedMessage {...messages.quantity} />}
+              ref={register}
+            />
+            <Input
+              isError={!!errors.unit}
+              name="unit"
+              size={{ width: '50%' }}
+              type="text"
+              label={<FormattedMessage {...messages.unit} />}
+              ref={register}
+            />
+          </div>
+
+          <div className="modal-row">
+            <Input
+              isError={!!errors.description}
+              size={{ width: '100%' }}
+              name="description"
+              label={<FormattedMessage {...messages.description} />}
               ref={register}
             />
           </div>
@@ -48,14 +52,14 @@ const ShoppingModal = ({ onSubmit, isOpen, closeModal }) => {
               placeholder="bla bla bla..."
             />
           </div>
-          <div className="modal-footer">
-            <Button block type="submit">
-              <FormattedMessage {...messages.add} />
-            </Button>
-          </div>
-        </form>
-      </ShoppingModalBox>
-    </ShoppingModalWrapper>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button block type="submit">
+            <FormattedMessage {...messages.add} />
+          </Button>
+        </Modal.Footer>
+      </form>
+    </Modal>
   );
 };
 

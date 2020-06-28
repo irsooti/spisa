@@ -18,27 +18,32 @@ const modalBoxAnimation = keyframes`
     }
 `;
 
-export const ShoppingModalWrapper = styled.div`
+export const ModalFooter = styled.div`
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+`;
+
+export const ModalWrapper = styled.div`
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); */
   animation-fill-mode: forwards;
   animation: ${modalAnimation} 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   background: #00000075;
   overflow: auto;
   display: flex;
   &.modal-exit {
+    animation-fill-mode: backwards;
     opacity: 0;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 300ms;
   }
   .modal {
     display: flex;
     flex-direction: column;
-    height: 100%;
     margin: auto;
     justify-content: center;
     align-self: center;
@@ -68,7 +73,7 @@ export const ShoppingModalWrapper = styled.div`
   }
 `;
 
-export const ShoppingModalBox = styled.div`
+export const ModalBox = styled.div`
   position: relative;
   top: -100px;
   display: block;
@@ -80,3 +85,5 @@ export const ShoppingModalBox = styled.div`
   box-shadow: ${(props) => props.theme.boxShadow};
   padding: 10px 15px;
 `;
+
+export const ModalContent = styled.div``

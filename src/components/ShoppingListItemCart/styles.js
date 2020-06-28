@@ -5,14 +5,16 @@ export const CartButton = styled.button`
   position: relative;
   width: 50px;
   height: 50px;
-  box-shadow: ${props => props.theme.boxShadow};
-  background: ${props => (props.isInCart ? props.theme.green : props.theme.blue)};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  background: ${(props) =>
+    props.isInCart ? props.theme.green : props.theme.blue};
   border-radius: 50%;
   border: none;
   z-index: 1;
   color: white;
-
-  &:hover {
+  font-size: 1.3em;
+  &:hover,
+  &:focus {
     outline: none;
   }
 `;

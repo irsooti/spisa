@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const NavigationBar = styled.div`
   position: fixed;
@@ -7,9 +7,9 @@ export const NavigationBar = styled.div`
   width: 100%;
   left: 0;
   display: flex;
-  box-shadow: ${props => props.theme.boxShadow};
+  box-shadow: ${(props) => props.theme.boxShadow};
   height: 50px;
-  background-color: ${props => props.theme.background};
+  background-color: ${(props) => props.theme.background};
   .item {
     flex-grow: 1;
   }
@@ -20,6 +20,12 @@ export const NavigationBarItems = styled.div`
   width: calc(100% - 100px);
 `;
 
+const press = keyframes`
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+`;
+
 export const AddButton = styled.button`
   display: block;
   position: absolute;
@@ -27,12 +33,16 @@ export const AddButton = styled.button`
   right: 30px;
   width: 70px;
   height: 70px;
-  box-shadow: ${props => props.theme.boxShadow};
-  background: white;
+  box-shadow: ${(props) => props.theme.boxShadow};
+  background: ${(props) => props.theme.greenBlueGradient};
   border-radius: 50%;
+  color: #fff;
   border: none;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
 
-  &:hover {
-      outline: none;
+  &:hover,
+  &:focus {
+    outline: none;
+    animation: ${press} 3s ease infinite;
   }
 `;

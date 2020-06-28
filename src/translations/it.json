@@ -10,5 +10,6 @@
   "ShoppingModal.notes": "Note",
   "ShoppingModal.add": "Aggiungi elemento alla lista",
   "ShoppingEmptyList.emptyText": "Non hai ancora comprato nulla",
-  "ShoppingListDefault.text": "Non hai aggiunto nulla alla tua lista."
+  "ShoppingListDefault.text": "Non hai aggiunto nulla alla tua lista.",
+  "ShoppingModal.unit": "Unità di misura"
 }

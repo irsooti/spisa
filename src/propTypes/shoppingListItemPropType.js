@@ -7,4 +7,5 @@ export default {
   priority: PropTypes.number,
   notes: PropTypes.string,
   isAdded: PropTypes.bool,
+  unit: PropTypes.string,
 };

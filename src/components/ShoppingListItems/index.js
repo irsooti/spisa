@@ -18,6 +18,7 @@ const ShoppingListItems = ({ items, update }) => {
             priority={items[key].priority}
             update={update}
             isAdded={items[key].isAdded}
+            unit={items[key].unit || ''}
           />
         ))}
       </ShoppingListFilterOrganize>
