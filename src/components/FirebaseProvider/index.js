@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import context from './context';
 import firebaseConfig from '../../config/firebaseConfig';
+import SplashScreen from '../Spashscreen';
 
 const { Provider } = context;
 
@@ -28,7 +29,7 @@ const FirebaseProvider = ({ children }) => {
     return <Provider value={firebaseInstance}>{children}</Provider>;
   }
 
-  return '';
+  return <SplashScreen />;
 };
 
 FirebaseProvider.propTypes = {

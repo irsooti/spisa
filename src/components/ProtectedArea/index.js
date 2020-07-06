@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import firebaseContext from '../FirebaseProvider/context';
 import { UserProvider } from '../UserProvider';
 import childrenPropType from '../../propTypes/childrenPropType';
+import SplashScreen from '../Spashscreen';
 
 export const ProtectedArea = ({ children, unauthorized }) => {
   const context = useContext(firebaseContext);
@@ -16,7 +17,7 @@ export const ProtectedArea = ({ children, unauthorized }) => {
   }, [context]);
 
   if (!initialized) {
-    return ''
+    return <SplashScreen />
   }
 
   if (user) {
