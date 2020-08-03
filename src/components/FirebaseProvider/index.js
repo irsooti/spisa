@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import context from './context';
 import firebaseConfig from '../../config/firebaseConfig';
-import SplashScreen from '../Spashscreen';
+import SplashScreen from '../Splashscreen';
 
 const { Provider } = context;
 

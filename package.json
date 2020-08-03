@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.9.3",
     "prop-types": "^15.7.2",
-    "ramda": "^0.27.0",
+    "ramda": "^0.27.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-hook-form": "^4.10.1",

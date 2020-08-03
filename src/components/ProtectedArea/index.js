@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import firebaseContext from '../FirebaseProvider/context';
 import { UserProvider } from '../UserProvider';
 import childrenPropType from '../../propTypes/childrenPropType';
-import SplashScreen from '../Spashscreen';
+import SplashScreen from '../Splashscreen';
 
 export const ProtectedArea = ({ children, unauthorized }) => {
   const context = useContext(firebaseContext);

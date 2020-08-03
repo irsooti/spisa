@@ -8,6 +8,7 @@ import { Login } from '../Login';
 import ShoppingArea from '../ShoppingArea';
 import locale_en from '../../translations/en.json';
 import locale_it from '../../translations/it.json';
+import MyShoppingList from '../MyShoppingLists';
 
 const data = {
   en: locale_en,
@@ -23,7 +24,8 @@ const App = () => {
       <FirebaseProvider>
         <Layout>
           <ProtectedArea unauthorized={<Login />}>
-            <ShoppingArea />
+            <MyShoppingList></MyShoppingList>
+            {/* <ShoppingArea /> */}
           </ProtectedArea>
         </Layout>
       </FirebaseProvider>
